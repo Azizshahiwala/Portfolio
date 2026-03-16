@@ -1,0 +1,39 @@
+.main-body {
+    padding-top: 70px;    
+    margin: 0;
+}
+.Main-intro-tag{
+    text-align: left;
+    background-color: #1f1f1f;
+    color: rgb(92, 241, 42);
+    margin: 0;
+}
+.Portfolio-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    z-index: 999;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* name on left, links on right */
+    box-sizing: border-box;
+}
+.Portfolio-menu nav {
+    display: flex;
+    gap: 1.5rem;        
+    font-size: 0.85rem; 
+}
+.Portfolio-menu nav a {
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    overflow-wrap:normal;
+}
+
+.Portfolio-menu nav a:hover {
+    color: #8ade2a;
+}
