@@ -90,3 +90,29 @@
 .Main-content section:hover .about-content{       
     animation: colorCycle 3s ease-in-out infinite;
 }
+
+
+#contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+#contact-list a {
+    color: #1c6445;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+#contact-list a:hover {
+    color: #8ade2a;        
+}
+
+#contact-list i {
+    font-size: 1.5rem;    
+}
