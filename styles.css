@@ -17,7 +17,7 @@
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* name on left, links on right */
+    justify-content: space-between;
     box-sizing: border-box;
 }
 .Portfolio-menu nav {
@@ -36,4 +36,57 @@
 
 .Portfolio-menu nav a:hover {
     color: #8ade2a;
+}
+
+.Main-content{
+    position: relative;
+    display: grid;
+    background-color:rgb(217, 239, 245);
+    padding-left: 1%;
+}
+
+.Main-content section{
+    background-color: rgb(211, 240, 240);
+    aspect-ratio: 2/1;
+    border: 2px solid #ccc;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+}
+.Main-content section:hover{
+    
+    background-color: rgb(204, 237, 237);
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes colorCycle {
+    0%   { background-color: rgb(172, 239, 192); }
+    25%  { background-color: rgb(173, 216, 230); }
+    50%  { background-color: rgb(144, 195, 212); }
+    75%  { background-color: rgb(100, 170, 200); }
+    100% { background-color: rgb(172, 239, 192); }
+}
+.Main-content section div {
+    position: relative;
+    z-index: 1;        
+}
+.Main-content .about-content{       
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    background-image: url('./assets/aboutme.png');
+    background-repeat: no-repeat;
+    background-size: cover;           
+    background-position: center;
+    opacity: 30%;
+}
+
+.Main-content section:hover .about-content{       
+    animation: colorCycle 3s ease-in-out infinite;
 }
