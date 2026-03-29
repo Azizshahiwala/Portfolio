@@ -52,15 +52,15 @@ html {
 .Main-content{
     position: relative;
     display: grid;
-    background-color:rgb(217, 239, 245);
+    background-color:#1f4f4f;
     grid-template-columns: 1fr;    
     gap: 0;
     padding: 0;
 }
 
 .Main-content section{
-    background-color: rgb(211, 240, 240);
     
+    background-color: #0f2525;
     border: none;
     align-items: center;
     justify-content: center;
@@ -75,7 +75,7 @@ html {
 
 .Main-content section:hover{
     
-    background-color: rgb(204, 237, 237);
+    background-color: #1f4f4f;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 }
@@ -140,14 +140,16 @@ html {
 
 .education-content {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;        /* grows with content */
+    height: auto;             /* ← add this, removes fixed height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
     color: #ffffff;
-    font-size: 1.1rem;          /* base font size for the whole section */
-    line-height: 1.8;           /* more breathing room between lines */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    box-sizing: border-box;
 }
 
 .edu-right-content {
@@ -170,14 +172,15 @@ html {
 .edu-item {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    border-left: 3px solid #8ade2a;
-    padding: 1.5rem;                        /* padding inside the card */
+    align-items: flex-start;  /* ← make sure this is flex-start not center */
+    padding: 1.5rem;
     gap: 2rem;
-    border: 1px solid rgba(255,255,255,0.2); /* subtle white border */
-    border-radius: 10px;                     /* rounded corners */
-    background-color: rgba(255,255,255,0.05);/* very slight white tint */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* soft shadow for depth */
+    border: 1px solid rgba(255,255,255,0.2);
+    border-left: 3px solid #8ade2a;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    width: 100%;              /* ← add this, ensures card fills full width */
 }
 
 .edu-degree {
@@ -216,6 +219,132 @@ html {
     padding-right: 0.8rem;       /* padding on right instead of left */
     border-right: 2px solid #555; /* border on right side */
     border-left: none;            /* remove left border */
+}
+
+/*section for projects*/
+
+.projects-content {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+.projects-heading {
+    font-size: 2rem;
+    color: #8ade2a;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-top: 3px solid #8ade2a;       /* green top accent */
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);          /* lifts card on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8ade2a;
+    font-size: 1.3rem;
+}
+
+.project-type {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    line-height: 1.6;
+    flex-grow: 1;                /* pushes tags and link to bottom of card */
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background-color: rgba(138, 222, 42, 0.1);
+    color: #8ade2a;
+    border: 1px solid rgba(138, 222, 42, 0.3);
+    border-radius: 20px;
+    padding: 0.2rem 0.7rem;
+}
+
+.project-link {
+    font-size: 0.85rem;
+    color: #8ade2a;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;            /* sticks to bottom of card */
+    transition: gap 0.3s;
+}
+
+.project-link:hover {
+    gap: 0.7rem;                 /* arrow shifts right on hover */
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 cards on tablet */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .projects-content {
+        padding: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;             /* 1 card on mobile */
+    }
+
+    .projects-heading {
+        font-size: 1.4rem;
+    }
 }
 
 /*For tablet display*/
@@ -305,4 +434,54 @@ html {
     }
 }
 
+@media (max-width: 767px) {
 
+    .education-content {
+        padding: 1.5rem;        /* less padding on small screens */
+        font-size: 1rem;        /* slightly smaller base font */
+    }
+
+    .edu-heading {
+        font-size: 1.4rem;      /* shrink section title */
+        margin-bottom: 1.2rem;
+    }
+
+    .edu-item {
+        flex-direction: column; /* stack left and right content vertically */
+        gap: 1.2rem;
+        padding: 1rem;
+    }
+
+    .edu-degree {
+        font-size: 1.1rem;
+    }
+
+    .edu-institution {
+        font-size: 0.95rem;
+    }
+
+    .edu-UGyear, .edu-CGPA, .edu-course {
+        font-size: 0.9rem;
+    }
+
+    .edu-right-content {
+        margin-left: 0;         /* remove right push, stacked now */
+        text-align: left;       /* align left when stacked */
+    }
+
+    .edu-subject-list {
+        align-items: flex-start; /* align left when stacked */
+    }
+
+    .edu-subject-list li {
+        font-size: 0.9rem;
+        border-right: none;          /* remove right border */
+        border-left: 2px solid #555; /* switch to left border when stacked */
+        padding-right: 0;
+        padding-left: 0.8rem;
+    }
+
+    .subjects {
+        font-size: 1rem;
+    }
+}
