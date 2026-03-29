@@ -132,7 +132,90 @@ html {
 }
 
 #contact-list i {
-    font-size: 1.5rem;    
+    font-size: 1.5rem;      
+}
+
+
+/*Section education*/
+
+.education-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    color: #ffffff;
+    font-size: 1.1rem;          /* base font size for the whole section */
+    line-height: 1.8;           /* more breathing room between lines */
+}
+
+.edu-right-content {
+    margin-left: auto;      /* pushes to the right */
+    text-align: right;      /* aligns text to the right */
+}
+.edu-left-content {
+    margin-right: auto;      
+    text-align: left;      
+}
+
+.edu-heading {
+    font-size: 2rem;            /* bigger section title */
+    color: #8ade2a;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-left: 3px solid #8ade2a;
+    padding: 1.5rem;                        /* padding inside the card */
+    gap: 2rem;
+    border: 1px solid rgba(255,255,255,0.2); /* subtle white border */
+    border-radius: 10px;                     /* rounded corners */
+    background-color: rgba(255,255,255,0.05);/* very slight white tint */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* soft shadow for depth */
+}
+
+.edu-degree {
+    font-size: 1.3rem;          /* most important, biggest */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.edu-institution {
+    color: #8ade2a;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.edu-UGyear, .edu-CGPA, .edu-course {
+    font-size: 1rem;
+    color: #aaaaaa;
+    margin-bottom: 0.3rem;
+}
+
+.subjects {
+    font-size: 1.1rem;
+    color: #8ade2a;
+    margin-bottom: 0.6rem;
+}
+.edu-subject-list li {
+    font-size: 1rem;            /* comfortable reading size */
+    color: #aaaaaa;
+    padding-right: 0.8rem;
+    border-right: 2px solid #555;
+}
+
+.edu-subject-list li {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    padding-right: 0.8rem;       /* padding on right instead of left */
+    border-right: 2px solid #555; /* border on right side */
+    border-left: none;            /* remove left border */
 }
 
 /*For tablet display*/
@@ -221,3 +304,5 @@ html {
         display: none;         /* ← hide on desktop */
     }
 }
+
+
