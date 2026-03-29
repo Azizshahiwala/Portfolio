@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aziz Shahiwala Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -9,6 +10,9 @@
     
     <header class="Portfolio-menu">
         <h1 class="Main-intro-tag">Aziz Shahiwala</h1>
+        <button class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+        </button>
         <nav>     
             <a href="#main-about">About me</a>
             <a href="#main-skills">Skills</a>
@@ -37,7 +41,7 @@
     </section>
     <section id="main-education" >
         <div class="education-content" id="style4">
-            <p>Education content goes here</p>
+            <p>Educations content goes here</p>
         </div>
     </section>
     <section id="main-contact">
@@ -64,5 +68,6 @@
     </section>    
     </div>
     
+    <script src="script.js"></script>
   </body>
 </html>

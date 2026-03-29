@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box; /* padding is included inside width, prevents overflow */
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-snap-type: y mandatory; 
+    /* snaps scroll to each section — one section at a time */
+    overflow-y: scroll;
+}
+
 .main-body {
     padding-top: 70px;    
     margin: 0;
@@ -42,19 +53,26 @@
     position: relative;
     display: grid;
     background-color:rgb(217, 239, 245);
-    padding-left: 1%;
+    grid-template-columns: 1fr;    
+    gap: 0;
+    padding: 0;
 }
 
 .Main-content section{
     background-color: rgb(211, 240, 240);
-    aspect-ratio: 2/1;
-    border: 2px solid #ccc;
+    
+    border: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     display: flex;
     overflow: hidden;
+    width: 100%;                 /* fills full width of screen */
+    min-height: 100vh;
+    aspect-ratio: unset;         /* removes 2/1 ratio, viewport height takes over */
+    scroll-snap-align: start;  
 }
+
 .Main-content section:hover{
     
     background-color: rgb(204, 237, 237);
@@ -115,4 +133,91 @@
 
 #contact-list i {
     font-size: 1.5rem;    
+}
+
+/*For tablet display*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .Main-content {
+        grid-template-columns: repeat(2, 1fr); 
+        /* 2 equal columns side by side */
+        /* 1fr = 1 fraction of available space */
+        gap: 1rem;       /* space between tiles */
+        padding: 1rem;   /* breathing room around the grid */
+    }
+
+    .Main-content section {
+        min-height: 40vh;    /* shorter tiles on tablet, not fullscreen */
+        aspect-ratio: 2/1;   /* restore 2/1 ratio for tile look on tablet */
+        scroll-snap-align: none; /* disable snap on tablet, normal scroll */
+        border: 2px solid #ccc;  /* border back for tile look */
+    }
+
+    .main-body {
+        padding-top: 70px; /* space below fixed nav */
+    }
+}
+
+/* For phone display */
+@media (max-width: 767px) {
+    .Main-content {
+        grid-template-columns: 1fr; /* single column, stacked sections */
+        gap: 0.8rem;                /* small gap between stacked tiles */
+        padding: 0.8rem;            /* padding around grid */
+    }
+
+    .Main-content section {
+        min-height: 50vw;        /* height based on screen width, not viewport */
+        aspect-ratio: 2/1;       /* restore tile ratio on phone */
+        scroll-snap-align: none; /* disable snap, normal scroll on phone */
+        border: 2px solid #ccc;
+    }
+
+    /* Collapse nav into hamburger menu */
+    .Portfolio-menu nav {
+        display: none;           /* hidden by default on mobile */
+        flex-direction: column;  /* links stack vertically when open */
+        position: absolute;      /* taken out of normal flow */
+        top: 60px;               /* sits just below the header */
+        left: 0;
+        width: 100%;             /* full screen width dropdown */
+        background-color: #1f1f1f;
+        padding: 1rem;
+        gap: 1rem;
+        z-index: 998;            /* just below header z-index of 999 */
+    }
+
+    .Portfolio-menu nav.open {
+        display: flex;           /* JS adds .open class to show menu */
+    }
+
+    .hamburger {
+        display: block;          /* show hamburger button on mobile */
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .Main-intro-tag {
+        font-size: 1rem;         /* shrink name on small screens */
+    }
+
+    .main-body {
+        padding-top: 60px;       /* slightly less than desktop */
+    }
+
+    #contact-list {
+        flex-direction: column;  /* stack social links vertically on phone */
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;         /* ← hide on desktop */
+    }
 }
