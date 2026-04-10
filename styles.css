@@ -131,6 +131,82 @@ html {
     font-size: 1.5rem;      
 }
 
+/*main certif*/
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.cert-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8ade2a;
+    font-size: 1.2rem;
+}
+
+.cert-type {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cert-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.cert-desc {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+.cert-link {
+    font-size: 0.85rem;
+    color: #8ade2a;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    transition: gap 0.3s;
+}
+
+.cert-link:hover {
+    gap: 0.7rem;
+}
+
+.cert-image {
+    width: 100%;
+    height: 300px;          
+    object-fit: cover;      
+    border-radius: 6px;
+    display: block;
+}
+
+.cert-image-group {
+    display: flex;
+    gap: 0.5rem;            
+}
+
+.cert-image-group .cert-image {
+    width: 50%;             
+    height: 200px;          
+    object-fit: cover;
+    border-radius: 6px;
+}
+@media (max-width: 767px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-content {
+        padding: 1.5rem;
+    }
+}
 
 /*Section education*/
 
