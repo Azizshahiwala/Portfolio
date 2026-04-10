@@ -131,7 +131,12 @@ html {
     font-size: 1.5rem;      
 }
 
+
 /*main certif*/
+.certificates-card-header{
+    color: #8ade2a;
+    padding-bottom: 1%;
+}
 .certificates-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,6 +208,9 @@ html {
         grid-template-columns: 1fr;
     }
 
+    .certificates-card-header{
+        padding-bottom: 1%;
+    }
     .certificates-content {
         padding: 1.5rem;
     }
