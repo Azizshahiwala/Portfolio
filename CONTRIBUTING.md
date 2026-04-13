@@ -40,7 +40,6 @@ Portfolio/
 ├── script.js               # JavaScript (hamburger menu, interactions)
 └── assets/
     ├── photo.jpg           # Profile photo
-    ├── resume.pdf          # Downloadable CV
     ├── aboutme.png         # About section background image
     └── certificates/       # Certificate images and PDFs
 ```
